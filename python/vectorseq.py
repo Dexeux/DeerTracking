@@ -1,6 +1,8 @@
 from numpy import *
 #Make a vector from a long and lat
 def tovector (longd,latd):
+    longd =(math.pi)*(longd/180)
+    latd =(math.pi)*(latd/180)
     r = 6371000*1.0
     z = r*sin(latd)
     n = r*cos(latd)
@@ -8,7 +10,15 @@ def tovector (longd,latd):
     y = n*sin(longd)
     pos = [x,y,z]
     return pos
-
+def tolong(input):
+    r = 6371000*1.0
+    latd =math.asin(input[2]/r)
+    n=sqrt(input[0]**2 + input[1]**2)
+    longd = math.acos(n/r)
+    longd = (longd/math.pi)*180
+    latd = (latd/math.pi)*180
+    pos = [longd,latd]
+    return pos
 #input 2 arrays
 def vectordiff(firstv,lastv):
     x = firstv[0] - lastv[0]
