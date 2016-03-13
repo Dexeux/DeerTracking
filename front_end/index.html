@@ -1,0 +1,50 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Where ma goose at?</title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.3.0/nouislider.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="controls" class="col-md-3 absolute menu-controls">
+        <h2 class="app-title">Where my <span class="bold"><select class="natural"><option>Goose</option><option>Bison</option><option>Eagle</option></select></span> at?</h2>
+    </div>
+    <div id="controls" class="col-md-3 absolute menu-controls-bottom">
+        <div class="menu-bottom-inner-controls">
+        <p class="start-to-end"><span style="font-weight: bolder;font-size:8px">From </span><span id="start"></span><span id="end"></span></p>
+            <input type="range" min="1" max="5" step="1" start="1" value="1" class="animal-selector" id="animal-selector" onchange="updateTextInput(this.value);">
+            <p id="animal-selector-value"></p>
+            <span><i class="fa fa-eyedropper color-selector-icon"></i><input type="text" onInput="changedColorAnimal(this.value);" placeholder="Enter color of goose marker" id="color-selector-value"></input></span>
+        </div>
+    </div>
+    <div id="time-control" class="col-md-5 absolute time-control">
+        <i class="fa fa-caret-left menu-control"></i>
+        <div class="show-date-time">
+            <div class="smallDate startSmallDate col-md-12"></div>
+            <div class="smallDate startEndDate col-md-12"></div>
+        </div>
+        <div class="date-time-picker">
+            <input type="text" id="startDate">
+            <span class="to">to</span>
+            <input type="text" id="endDate">
+        </div>
+    </div>
+    <div id="content" class="col-md-12"></div>
+    <script src="sql.js"></script>
+    <script type="text/javascript" src="moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.3.0/nouislider.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwp7702v2UqU9Yhwn9ScHlqOR0rv2CuqU&libraries=drawing"></script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js"></script>
+</body>
+
+</html>
