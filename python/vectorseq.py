@@ -24,7 +24,8 @@ def vectordiff(firstv,lastv):
     x = firstv[0] - lastv[0]
     y = firstv[1] - lastv[1]
     z = firstv[2] - lastv[2]
-    dist = [x,y,z]
+    scalar = sqrt(x**2 + y**2 + z**2)
+    dist = [x/scalar,y/scalar,z/scalar]
     return dist
 def vectoradd(posvec,movev):
     x = posvec[0] + movev[0]
