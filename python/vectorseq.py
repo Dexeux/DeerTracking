@@ -26,6 +26,12 @@ def vectordiff(firstv,lastv):
     z = firstv[2] - lastv[2]
     dist = [x,y,z]
     return dist
+def vectoradd(posvec,movev):
+    x = posvec[0] + movev[0]
+    y = posvec[1] + movev[1]
+    z = posvec[2] + movev[2]
+    dist = [x,y,z]
+    return dist
 def vectorspeed(firstv,time1,lastv,time2):
     x = firstv[0] - lastv[0]
     y = firstv[1] - lastv[1]
