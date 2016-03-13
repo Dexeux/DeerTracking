@@ -1,0 +1,3 @@
+f = open('*.csv', 'r')
+for line in f:
+    
