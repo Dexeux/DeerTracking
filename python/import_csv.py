@@ -2,6 +2,7 @@ import csv
 import sys
 import models
 
+# Input data into row for SQL database
 def inputLocforAnimal(unique_animal, loc_point, row):
     if unique_animal.tag_id != row[11]:
         new_unique_animal = Animal(animal_name="white-fronted-goose", tag_id=row[11])
